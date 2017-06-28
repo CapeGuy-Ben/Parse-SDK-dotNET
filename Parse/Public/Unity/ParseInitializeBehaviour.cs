@@ -29,6 +29,11 @@ namespace Parse {
     public string dotnetKey;
 
     /// <summary>
+    /// The URL of the parse-server we wish to connecto to
+    [SerializeField]
+    public string server;
+
+    /// <summary>
     /// Initializes the Parse SDK and begins running network requests created by Parse.
     /// </summary>
     public virtual void Awake() {
@@ -66,7 +71,7 @@ namespace Parse {
         // Keep this gameObject around, even when the scene changes.
         GameObject.DontDestroyOnLoad(gameObject);
 
-        ParseClient.Initialize(applicationID, dotnetKey);
+        ParseClient.Initialize(applicationID, server, dotnetKey);
 
         // Kick off the dispatcher.
         StartCoroutine(PlatformHooks.RunDispatcher());

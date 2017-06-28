@@ -109,11 +109,14 @@ namespace Parse {
     /// </summary>
     /// <param name="applicationId">The Application ID provided in the Parse dashboard.
     /// </param>
+    /// <param name="server">The URL of the server we wish to connect to.
+    /// </param>
     /// <param name="dotnetKey">The .NET API Key provided in the Parse dashboard.
     /// </param>
-    public static void Initialize(string applicationId, string dotnetKey) {
+    public static void Initialize(string applicationId, string server, string dotnetKey = null) {
       Initialize(new Configuration {
         ApplicationId = applicationId,
+        Server = server,
         WindowsKey = dotnetKey
       });
     }
