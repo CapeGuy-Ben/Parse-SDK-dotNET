@@ -60,6 +60,8 @@ namespace Parse {
     /// <seealso href="http://docs.unity3d.com/ScriptReference/MonoBehaviour.OnApplicationPause.html"/>
     /// <param name="paused"><c>true</c> if the application is paused.</param>
     public void OnApplicationPause(bool paused) {
+      Initialize ();
+
       if (PlatformHooks.IsAndroid) {
         PlatformHooks.CallStaticJavaUnityMethod("com.parse.ParsePushUnityHelper", "setApplicationPaused", new object[] { paused });
       }
