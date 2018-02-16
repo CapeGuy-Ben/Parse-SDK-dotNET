@@ -1157,12 +1157,12 @@ namespace Parse {
       }
 
       settingsPath = Path.Combine(Application.persistentDataPath, "Parse.settings");
-      // We can only set some values here since we can be sure that Initialize is always called
-      // from main thread.
-      isWebPlayer = Application.isWebPlayer;
+			// We can only set some values here since we can be sure that Initialize is always called
+			// from main thread.
+			isWebPlayer = false; // :EDIT: Cape Guy - web player deprecated. // Application.isWebPlayer;
       osVersion = SystemInfo.deviceModel;
       appBuildVersion = Application.version;
-      appDisplayVersion = Application.bundleIdentifier;
+			appDisplayVersion = Application.identifier; // :Edit: Cape Guy - renamed. Application.bundleIdentifier;
       appName = Application.productName;
 
       settings = SettingsWrapper.Wrapper;
