@@ -6,10 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Reflection;
 
-#if UNITY
-using TypeInfo = System.Type;
-#endif
-
 namespace Parse.Internal {
   internal class ObjectSubclassInfo {
     public ObjectSubclassInfo(Type type, ConstructorInfo constructor) {

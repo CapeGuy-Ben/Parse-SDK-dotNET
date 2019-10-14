@@ -4,10 +4,6 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 
-#if UNITY
-using TypeInfo = System.Type;
-#endif
-
 namespace Parse.Internal {
   internal class ObjectSubclassingController : IObjectSubclassingController {
     // Class names starting with _ are documented to be reserved. Use this one
