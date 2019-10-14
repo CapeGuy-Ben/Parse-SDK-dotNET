@@ -28,9 +28,10 @@ namespace Parse {
     [SerializeField]
     public string dotnetKey;
 
-    /// <summary>
-    /// The URL of the parse-server we wish to connecto to
-    [SerializeField]
+	/// <summary>
+	/// The URL of the parse-server we wish to connecto to
+	/// /// </summary>
+	[SerializeField]
     public string server;
 
     /// <summary>

@@ -77,8 +77,6 @@ namespace Parse {
           return "android";
         } else if (PlatformHooks.IsIOS) {
           return "ios";
-        } else if (PlatformHooks.IsWindowsPhone8) {
-          return "winphone";
         } else {
           return "unknown";
         }
@@ -171,18 +169,6 @@ namespace Parse {
           throw new InvalidOperationException("Parse must be initialized before making any calls.");
         }
         return Application.platform == RuntimePlatform.tvOS;
-      }
-    }
-
-    /// <summary>
-    /// Returns true if current running platform is Windows Phone 8.
-    /// </summary>
-    internal static bool IsWindowsPhone8 {
-      get {
-        if (settingsPath == null) {
-          throw new InvalidOperationException("Parse must be initialized before making any calls.");
-        }
-        return Application.platform == RuntimePlatform.WP8Player;
       }
     }
 
@@ -1149,7 +1135,7 @@ namespace Parse {
     }
 
     /// <summary>
-    /// Initialize the app. Called from <see cref="ParseClient.Initialize(string, string)"/>. Guaranteed to be run on main thread.
+    /// Initialize the app. Called from <see cref="ParseClient.Initialize(string, string, string)"/>. Guaranteed to be run on main thread.
     /// </summary>
     public void Initialize() {
       if (settingsPath != null) {
